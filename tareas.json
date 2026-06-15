@@ -199,17 +199,6 @@
       "recurring": true
     },
     {
-      "id": "6477605f-15e6-41b8-89f4-ffbb55ce3c03",
-      "title": "entrenamiento para simpatico",
-      "desc": "",
-      "day": "Lunes",
-      "priority": "Alta",
-      "time": "15:00",
-      "done": false,
-      "order": 41,
-      "recurring": true
-    },
-    {
       "id": "50dc0e80-caf6-46d0-ad03-cd3e9242a675",
       "title": "Trabajar en CLOI AI",
       "desc": "",
