@@ -12,17 +12,6 @@
       "recurring": true
     },
     {
-      "id": "db8cebe4-318a-43f3-a6ca-692d6f39f1dc",
-      "title": "Curso contabilidad",
-      "desc": "2 horas, de 8am a 10 pm",
-      "day": "Lunes",
-      "priority": "Alta",
-      "time": "08:00",
-      "done": false,
-      "order": 1,
-      "recurring": true
-    },
-    {
       "id": "d3f26fe2-aadf-4a30-86c4-3e4648e7ee15",
       "title": "Meditar",
       "desc": "",
