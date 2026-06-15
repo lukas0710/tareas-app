@@ -274,6 +274,17 @@
       "done": false,
       "recurring": true,
       "order": 49
+    },
+    {
+      "id": "5272182d-aab8-4b13-85a9-8308e1b80bd7",
+      "title": "optimizar asistente 1 etapa",
+      "desc": "",
+      "day": "Lunes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": false,
+      "order": 50
     }
   ],
   "last_reset": "(2026, 25)"
