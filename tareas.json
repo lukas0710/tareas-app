@@ -56,17 +56,6 @@
       "recurring": true
     },
     {
-      "id": "61be1d0c-c4b1-4a5e-ab62-0434c63ba0c4",
-      "title": "Clase IA",
-      "desc": "",
-      "day": "Lunes",
-      "priority": "Alta",
-      "time": "18:00",
-      "done": false,
-      "order": 14,
-      "recurring": true
-    },
-    {
       "id": "c0e535ed-87e6-4821-949c-76e09cd69e97",
       "title": "Facegym y corrector",
       "desc": "",
