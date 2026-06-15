@@ -263,6 +263,17 @@
       "done": false,
       "order": 48,
       "recurring": true
+    },
+    {
+      "id": "412daa72-f3b8-4691-85cf-e21fa6516510",
+      "title": "Voz y trabalenguas",
+      "desc": "",
+      "day": "Lunes",
+      "priority": "Media",
+      "time": "11:15",
+      "done": false,
+      "recurring": true,
+      "order": 49
     }
   ],
   "last_reset": "(2026, 25)"
