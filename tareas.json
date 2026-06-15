@@ -12,17 +12,6 @@
       "recurring": true
     },
     {
-      "id": "d3f26fe2-aadf-4a30-86c4-3e4648e7ee15",
-      "title": "Meditar",
-      "desc": "",
-      "day": "Lunes",
-      "priority": "Alta",
-      "time": "11:30",
-      "done": false,
-      "order": 3,
-      "recurring": true
-    },
-    {
       "id": "9bfc504f-9ba3-44c3-afaa-f80876a11284",
       "title": "Face gym y corrector de postura",
       "desc": "",
