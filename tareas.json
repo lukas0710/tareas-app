@@ -210,17 +210,6 @@
       "recurring": true
     },
     {
-      "id": "223bd32b-8e2c-4950-a030-669390394ad5",
-      "title": "Tarea contabilidad",
-      "desc": "",
-      "day": "Lunes",
-      "priority": "Alta",
-      "time": "12:00",
-      "done": false,
-      "order": 40,
-      "recurring": true
-    },
-    {
       "id": "6477605f-15e6-41b8-89f4-ffbb55ce3c03",
       "title": "entrenamiento para simpatico",
       "desc": "",
