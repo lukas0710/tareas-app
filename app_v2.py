@@ -1,6 +1,9 @@
 import json
 import os
 import uuid
+import base64
+import urllib.request
+import urllib.error
 from datetime import date, time, datetime
 
 import streamlit as st
@@ -24,6 +27,123 @@ DAY_EMOJI = {
 }
 PRIO_COLOR = {"Alta": "#FF4D6D", "Media": "#FFB347", "Baja": "#4ECDC4"}
 DATA_FILE = "tareas.json"
+
+# --------------------------
+# Almacenamiento (GitHub si hay token, si no archivo local)
+# --------------------------
+def _secret(key, default=""):
+    """Lee un valor de st.secrets sin romper si no existe."""
+    try:
+        return st.secrets[key]
+    except Exception:
+        return default
+
+GH_TOKEN  = _secret("GITHUB_TOKEN", "")
+GH_REPO   = _secret("GITHUB_REPO", "lukas0710/tareas-app")
+GH_BRANCH = _secret("GITHUB_BRANCH", "main")
+GH_PATH   = _secret("GITHUB_PATH", "tareas.json")
+USE_GITHUB = bool(GH_TOKEN and GH_REPO)
+
+
+def _gh_request(url, method="GET", payload=None):
+    data = json.dumps(payload).encode("utf-8") if payload is not None else None
+    req = urllib.request.Request(url, data=data, method=method)
+    req.add_header("Authorization", f"Bearer {GH_TOKEN}")
+    req.add_header("Accept", "application/vnd.github+json")
+    req.add_header("User-Agent", "tareas-app")
+    if data is not None:
+        req.add_header("Content-Type", "application/json")
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _gh_load_raw():
+    url = f"https://api.github.com/repos/{GH_REPO}/contents/{GH_PATH}?ref={GH_BRANCH}"
+    info = _gh_request(url)
+    st.session_state._gh_sha = info.get("sha")
+    content = base64.b64decode(info["content"]).decode("utf-8")
+    return json.loads(content)
+
+
+def _gh_save_raw(obj):
+    url = f"https://api.github.com/repos/{GH_REPO}/contents/{GH_PATH}"
+    body = json.dumps(obj, ensure_ascii=False, indent=2)
+    payload = {
+        "message": "Actualizar tareas desde la app",
+        "content": base64.b64encode(body.encode("utf-8")).decode("utf-8"),
+        "branch": GH_BRANCH,
+    }
+    sha = st.session_state.get("_gh_sha")
+    if sha:
+        payload["sha"] = sha
+    resp = _gh_request(url, method="PUT", payload=payload)
+    st.session_state._gh_sha = resp["content"]["sha"]
+
+
+def _normalize(raw):
+    """Acepta lista (formato viejo) o dict (formato nuevo) -> (tasks, meta)."""
+    if isinstance(raw, dict):
+        tasks = raw.get("tasks", [])
+        meta = {"last_reset": raw.get("last_reset", "")}
+    elif isinstance(raw, list):
+        tasks = raw
+        meta = {"last_reset": ""}
+    else:
+        tasks, meta = [], {"last_reset": ""}
+
+    if not isinstance(tasks, list):
+        tasks = []
+
+    for i, t in enumerate(tasks):
+        t.setdefault("id", str(uuid.uuid4()))
+        t.setdefault("title", "")
+        t.setdefault("desc", "")
+        t.setdefault("day", "Lunes")
+        t.setdefault("priority", "Media")
+        t.setdefault("time", "00:00")
+        t.setdefault("done", False)
+        t.setdefault("order", i)
+        t.setdefault("recurring", True)   # las tareas viejas son rutina
+    return tasks, meta
+
+
+def storage_load():
+    if USE_GITHUB:
+        try:
+            return _normalize(_gh_load_raw())
+        except Exception as e:
+            st.session_state._storage_error = f"No se pudo leer de GitHub: {e}"
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
+                return _normalize(json.load(f))
+        except Exception:
+            pass
+    return _normalize([])
+
+
+def storage_save():
+    obj = {
+        "tasks": st.session_state.tasks,
+        "last_reset": st.session_state.meta.get("last_reset", ""),
+    }
+    # Copia local siempre (es lo que se usa al correrla en tu PC)
+    try:
+        with open(DATA_FILE, "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+    # Guardado permanente en GitHub si hay token
+    if USE_GITHUB:
+        try:
+            _gh_save_raw(obj)
+            st.session_state._storage_error = ""
+        except Exception as e:
+            st.session_state._storage_error = f"No se pudo guardar en GitHub: {e}"
+
+
+def persist():
+    storage_save()
 
 # --------------------------
 # CSS moderno minimalista
@@ -157,31 +277,6 @@ def parse_hhmm(s: str) -> time:
 def hhmm(t: time) -> str:
     return f"{t.hour:02d}:{t.minute:02d}"
 
-def load_tasks() -> list[dict]:
-    if not os.path.exists(DATA_FILE):
-        return []
-    try:
-        with open(DATA_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        if isinstance(data, list):
-            for i, task in enumerate(data):
-                task.setdefault("id", str(uuid.uuid4()))
-                task.setdefault("title", "")
-                task.setdefault("desc", "")
-                task.setdefault("day", "Lunes")
-                task.setdefault("priority", "Media")
-                task.setdefault("time", "00:00")
-                task.setdefault("done", False)
-                task.setdefault("order", i)
-            return data
-        return []
-    except Exception:
-        return []
-
-def save_tasks(tasks: list[dict]) -> None:
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(tasks, f, ensure_ascii=False, indent=2)
-
 def sort_tasks(tasks: list[dict], mode: str = "day") -> list[dict]:
     if mode == "day":
         return sorted(tasks, key=lambda t: (
@@ -206,37 +301,23 @@ def next_order(tasks: list[dict]) -> int:
 def get_iso_week() -> str:
     return str(date.today().isocalendar()[:2])  # e.g. "(2026, 9)"
 
-def get_last_reset() -> str:
-    if os.path.exists("last_reset.txt"):
-        try:
-            return open("last_reset.txt").read().strip()
-        except Exception:
-            return ""
-    return ""
-
-def save_last_reset(w: str) -> None:
-    with open("last_reset.txt", "w") as f:
-        f.write(w)
-
 # --------------------------
 # Session state
 # --------------------------
-if "tasks" not in st.session_state:
-    st.session_state.tasks = load_tasks()
+if "tasks" not in st.session_state or "meta" not in st.session_state:
+    st.session_state.tasks, st.session_state.meta = storage_load()
 if "form_gen" not in st.session_state:
     st.session_state.form_gen = 0
 
-# ── WEEKLY RESET (lunes de cada semana) ───────────────────────────────────────
+# ── RESET SEMANAL (solo tareas recurrentes) ───────────────────────────────────
+# Las tareas "únicas" NO se reinician: se quedan hasta que las completes.
 current_week = get_iso_week()
-if get_last_reset() != current_week:
-    changed = False
+if st.session_state.meta.get("last_reset") != current_week:
     for t in st.session_state.tasks:
-        if t.get("done", False):
+        if t.get("recurring", True) and t.get("done", False):
             t["done"] = False
-            changed = True
-    if changed:
-        save_tasks(st.session_state.tasks)
-    save_last_reset(current_week)
+    st.session_state.meta["last_reset"] = current_week
+    persist()
 # ─────────────────────────────────────────────────────────────────────────────
 
 tasks = st.session_state.tasks
@@ -263,6 +344,15 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
+# Indicador de guardado
+if USE_GITHUB:
+    if st.session_state.get("_storage_error"):
+        st.warning("⚠️ " + st.session_state._storage_error)
+    else:
+        st.caption("💾 Guardado permanente activo (GitHub)")
+else:
+    st.caption("💾 Guardado local · en la nube las tareas pueden borrarse al reiniciar. Activa el guardado en GitHub (ver instrucciones).")
+
 st.divider()
 
 # ══════════════════════════════════════════════
@@ -277,7 +367,7 @@ with m3:
     st.metric("✓ Completadas", done_count, delta=f"{pct_done}%", delta_color="normal")
 
 if total > 0:
-    st.progress(pct_done / 100, text=f"Progreso semanal · {pct_done}%")
+    st.progress(pct_done / 100, text=f"Progreso · {pct_done}%")
 
 st.divider()
 
@@ -292,8 +382,14 @@ with st.expander("＋  Nueva tarea", expanded=False):
     desc     = c1.text_area("Descripción", placeholder="Detalles, pasos, notas…", height=72, key=f"form_desc_{g}", label_visibility="collapsed")
     day      = c2.selectbox("Día", DAYS, index=day_index(today_day), key=f"form_day_{g}")
     priority = c3.selectbox("Prioridad", PRIORITIES, index=1, key=f"form_priority_{g}")
-    col_t, _ = st.columns([2, 3])
+
+    col_t, col_r = st.columns([2, 3])
     task_time = col_t.time_input("Hora", value=time(8, 0), key=f"form_time_{g}")
+    recurring = col_r.toggle("🔁 Se repite cada semana", value=True, key=f"form_recurring_{g}")
+    if recurring:
+        col_r.caption("Rutina: cada lunes se reinicia para volver a hacerla.")
+    else:
+        col_r.caption("Tarea única: queda pendiente hasta que la completes (no se borra).")
 
     if st.button("Crear tarea →", type="primary"):
         if not title.strip():
@@ -307,9 +403,10 @@ with st.expander("＋  Nueva tarea", expanded=False):
                 "priority": priority,
                 "time": hhmm(task_time),
                 "done": False,
+                "recurring": bool(recurring),
                 "order": next_order(tasks),
             })
-            save_tasks(tasks)
+            persist()
             st.session_state.form_gen += 1
             st.rerun()
 
@@ -320,31 +417,43 @@ st.divider()
 # ══════════════════════════════════════════════
 st.markdown("<span style='font-size:1rem;font-weight:600;color:#888899;letter-spacing:0.06em;text-transform:uppercase;'>Tareas</span>", unsafe_allow_html=True)
 
-f1, f2, f3, f4 = st.columns([1.2, 1.2, 1, 1.8])
+f1, f2, f3, f4, f5 = st.columns([1.2, 1.2, 1.2, 1, 1.6])
 
 # ← DÍA DE HOY como default
 today_index_in_filter = DAYS.index(today_day) + 1  # +1 porque index 0 = "Todos"
 filter_day      = f1.selectbox("Día", ["Todos"] + DAYS, index=today_index_in_filter)
-filter_priority = f2.selectbox("Prioridad", ["Todas"] + PRIORITIES, index=0)
-show_done       = f3.checkbox("Ver hechas", value=True)
-sort_mode       = f4.selectbox("Ordenar por", ["Día → Hora → Prioridad", "Prioridad → Día → Hora"], index=0)
+filter_type     = f2.selectbox("Tipo", ["Todas", "🔁 Recurrentes", "📌 Únicas"], index=0)
+filter_priority = f3.selectbox("Prioridad", ["Todas"] + PRIORITIES, index=0)
+show_done       = f4.checkbox("Ver hechas", value=True)
+sort_mode       = f5.selectbox("Ordenar por", ["Día → Hora → Prioridad", "Prioridad → Día → Hora"], index=0)
 
 filtered = tasks[:]
 if filter_day      != "Todos":  filtered = [t for t in filtered if t.get("day")      == filter_day]
 if filter_priority != "Todas":  filtered = [t for t in filtered if t.get("priority") == filter_priority]
+if filter_type == "🔁 Recurrentes":  filtered = [t for t in filtered if t.get("recurring", True)]
+elif filter_type == "📌 Únicas":     filtered = [t for t in filtered if not t.get("recurring", True)]
 if not show_done:               filtered = [t for t in filtered if not t.get("done", False)]
 
 mode_key = "day" if "Día" in sort_mode else "priority"
 filtered = sort_tasks(filtered, mode=mode_key)
 
 n = len(filtered)
-st.caption(f'{n} tarea{"s" if n != 1 else ""} · reseteo semanal los lunes')
+st.caption(f'{n} tarea{"s" if n != 1 else ""} · las recurrentes se reinician los lunes · las únicas quedan hasta completarlas')
+
+# Botón para limpiar tareas únicas completadas
+done_unique = [t for t in tasks if not t.get("recurring", True) and t.get("done", False)]
+if done_unique:
+    if st.button(f"🧹 Limpiar {len(done_unique)} tarea(s) única(s) completada(s)"):
+        st.session_state.tasks = [
+            t for t in tasks
+            if not (not t.get("recurring", True) and t.get("done", False))
+        ]
+        persist()
+        st.rerun()
 
 # ══════════════════════════════════════════════
 # RENDER TASKS
 # ══════════════════════════════════════════════
-PRIO_ICON = {"Alta": "●", "Media": "●", "Baja": "●"}
-
 if not filtered:
     st.markdown("""
     <div style="text-align:center;padding:3rem 0;color:#333350;">
@@ -354,19 +463,21 @@ if not filtered:
     """, unsafe_allow_html=True)
 else:
     for t in filtered:
-        done      = bool(t.get("done", False))
-        prio      = t.get("priority", "Media")
+        done       = bool(t.get("done", False))
+        prio       = t.get("priority", "Media")
         prio_color = PRIO_COLOR.get(prio, "#888")
-        day_emoji = DAY_EMOJI.get(t.get("day", ""), "📅")
-        title_txt = t.get("title", "")
-        opacity   = "0.45" if done else "1"
+        day_emoji  = DAY_EMOJI.get(t.get("day", ""), "📅")
+        title_txt  = t.get("title", "")
+        opacity    = "0.45" if done else "1"
+        is_rec     = t.get("recurring", True)
+        type_badge = "🔁" if is_rec else "📌"
 
         with st.container(border=True):
             st.markdown(f"""
             <div style="opacity:{opacity};display:flex;align-items:center;gap:10px;padding:0.1rem 0 0.4rem 0;">
                 <span style="color:{prio_color};font-size:0.7rem;">●</span>
                 <span style="font-size:0.72rem;color:#555570;font-family:'DM Mono',monospace;letter-spacing:0.03em;">
-                    {day_emoji} {t.get('day')} · {t.get('time')}
+                    {type_badge} {day_emoji} {t.get('day')} · {t.get('time')}
                 </span>
                 <span style="font-size:0.95rem;font-weight:{'400' if done else '600'};
                     {'text-decoration:line-through;color:#444460' if done else 'color:#E8E8F0'}">
@@ -388,13 +499,13 @@ else:
                         if tt["id"] == t["id"]:
                             tt["done"] = done_value
                             break
-                    save_tasks(tasks)
+                    persist()
                     st.rerun()
 
             with col_del:
                 if st.button("✕", key=f"qdel_{t['id']}", help="Eliminar tarea"):
                     st.session_state.tasks = [x for x in tasks if x["id"] != t["id"]]
-                    save_tasks(st.session_state.tasks)
+                    persist()
                     st.rerun()
 
             with col_edit:
@@ -408,6 +519,7 @@ else:
                     new_day      = e2.selectbox("Día",       DAYS,       index=day_index(t.get("day","Lunes")), key=f"eday_{t['id']}")
                     new_priority = e3.selectbox("Prioridad", PRIORITIES, index=PRIORITIES.index(t.get("priority","Media")), key=f"eprio_{t['id']}")
                     new_time     = st.time_input("Hora", value=parse_hhmm(t.get("time","00:00")), key=f"etime_{t['id']}")
+                    new_recurring = st.toggle("🔁 Se repite cada semana", value=bool(t.get("recurring", True)), key=f"erec_{t['id']}")
 
                     if st.button("Guardar →", type="primary", key=f"save_{t['id']}"):
                         for tt in tasks:
@@ -418,13 +530,18 @@ else:
                                     "day": new_day,
                                     "priority": new_priority,
                                     "time": hhmm(new_time),
+                                    "recurring": bool(new_recurring),
                                 })
                                 break
-                        save_tasks(tasks)
+                        persist()
                         st.rerun()
 
 # ══════════════════════════════════════════════
 # FOOTER
 # ══════════════════════════════════════════════
 st.divider()
-st.caption("◈ tareas.json · reset semanal automático cada lunes · sin internet requerido")
+st.caption("◈ 🔁 recurrente = rutina semanal · 📌 única = queda hasta completarla")
+
+
+
+
