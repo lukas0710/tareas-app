@@ -111,17 +111,6 @@
       "recurring": true
     },
     {
-      "id": "673b26f0-4396-4ade-a0ea-14582ea0b97f",
-      "title": "Comenzar  Asistente Cloe IA",
-      "desc": "",
-      "day": "Lunes",
-      "priority": "Alta",
-      "time": "13:00",
-      "done": false,
-      "order": 27,
-      "recurring": true
-    },
-    {
       "id": "9545f32c-f96c-4d9f-8c4c-45f98c6fac6a",
       "title": "ejercicio de voz",
       "desc": "",
