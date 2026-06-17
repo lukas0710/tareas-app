@@ -188,17 +188,6 @@
       "recurring": true
     },
     {
-      "id": "f40b63aa-ef74-4155-87e5-f916cb8d9ec1",
-      "title": "5 parasimpatico",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Alta",
-      "time": "18:00",
-      "done": false,
-      "order": 44,
-      "recurring": true
-    },
-    {
       "id": "20f45b0a-5adc-43c6-b442-94256755fa56",
       "title": "Cloe AI",
       "desc": "",
