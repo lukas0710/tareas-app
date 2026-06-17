@@ -188,17 +188,6 @@
       "recurring": true
     },
     {
-      "id": "b5abb316-3e50-49d3-a585-0ccb4062d9ba",
-      "title": "REVISAR PARASIMPATICO",
-      "desc": "",
-      "day": "Miércoles",
-      "priority": "Alta",
-      "time": "14:00",
-      "done": false,
-      "order": 47,
-      "recurring": true
-    },
-    {
       "id": "67ea526e-fa19-4211-b5ec-d0fa6ce81346",
       "title": "FACEGY Y CORRECTOR",
       "desc": "",
