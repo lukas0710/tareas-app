@@ -78,17 +78,6 @@
       "recurring": true
     },
     {
-      "id": "c8e073fe-342c-40bf-a127-9cf3f8879d83",
-      "title": "contabilidad",
-      "desc": "",
-      "day": "Miércoles",
-      "priority": "Alta",
-      "time": "08:00",
-      "done": false,
-      "order": 20,
-      "recurring": true
-    },
-    {
       "id": "f9ced547-8b20-4aa8-9f23-0122b3b084d9",
       "title": "Reunion de trabajo IA negocios",
       "desc": "",
