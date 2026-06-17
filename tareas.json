@@ -241,6 +241,17 @@
       "done": false,
       "recurring": false,
       "order": 50
+    },
+    {
+      "id": "a82b9680-df85-4188-b3ea-204b21616469",
+      "title": "Flow asset",
+      "desc": "",
+      "day": "Miércoles",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": false,
+      "order": 51
     }
   ],
   "last_reset": "(2026, 25)"
