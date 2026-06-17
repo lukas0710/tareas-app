@@ -188,17 +188,6 @@
       "recurring": true
     },
     {
-      "id": "50dc0e80-caf6-46d0-ad03-cd3e9242a675",
-      "title": "Trabajar en CLOI AI",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Media",
-      "time": "12:00",
-      "done": false,
-      "order": 42,
-      "recurring": true
-    },
-    {
       "id": "e44c4d0f-0323-452c-bcc2-3b31d79c0cce",
       "title": "TALLER INVENTARIO 11",
       "desc": "",
