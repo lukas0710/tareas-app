@@ -177,17 +177,6 @@
       "recurring": true
     },
     {
-      "id": "20f45b0a-5adc-43c6-b442-94256755fa56",
-      "title": "Cloe AI",
-      "desc": "",
-      "day": "Miércoles",
-      "priority": "Alta",
-      "time": "13:30",
-      "done": false,
-      "order": 46,
-      "recurring": true
-    },
-    {
       "id": "67ea526e-fa19-4211-b5ec-d0fa6ce81346",
       "title": "FACEGY Y CORRECTOR",
       "desc": "",
