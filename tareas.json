@@ -188,17 +188,6 @@
       "recurring": true
     },
     {
-      "id": "e44c4d0f-0323-452c-bcc2-3b31d79c0cce",
-      "title": "TALLER INVENTARIO 11",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Media",
-      "time": "13:00",
-      "done": false,
-      "order": 43,
-      "recurring": true
-    },
-    {
       "id": "f40b63aa-ef74-4155-87e5-f916cb8d9ec1",
       "title": "5 parasimpatico",
       "desc": "",
