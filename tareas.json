@@ -199,17 +199,6 @@
       "recurring": true
     },
     {
-      "id": "2a7fadae-af76-48aa-b90e-972c510bad4c",
-      "title": "revisar documento semanal para simpatico",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Alta",
-      "time": "15:00",
-      "done": false,
-      "order": 45,
-      "recurring": true
-    },
-    {
       "id": "20f45b0a-5adc-43c6-b442-94256755fa56",
       "title": "Cloe AI",
       "desc": "",
