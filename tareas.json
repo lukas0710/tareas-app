@@ -241,6 +241,17 @@
       "done": false,
       "recurring": true,
       "order": 53
+    },
+    {
+      "id": "2349013a-7f39-4bcc-b36a-020a01fd40ff",
+      "title": "PUBLICAR 5 PRODUCTOS EN M ANDRES",
+      "desc": "",
+      "day": "Jueves",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 54
     }
   ],
   "last_reset": "(2026, 26)"
