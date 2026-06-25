@@ -252,6 +252,17 @@
       "done": false,
       "recurring": true,
       "order": 54
+    },
+    {
+      "id": "af458699-8197-449d-9f2a-f24333b0dece",
+      "title": "4 ACCIONES LIMPIEZA Y APARIENCIA",
+      "desc": "",
+      "day": "Jueves",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 55
     }
   ],
   "last_reset": "(2026, 26)"
