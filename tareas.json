@@ -230,6 +230,17 @@
       "done": false,
       "recurring": true,
       "order": 52
+    },
+    {
+      "id": "5070fec7-853e-4214-be24-9b04fd240fea",
+      "title": "MEDITAR Y SUPLEMENTOS",
+      "desc": "",
+      "day": "Jueves",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 53
     }
   ],
   "last_reset": "(2026, 26)"
