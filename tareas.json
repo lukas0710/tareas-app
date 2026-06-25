@@ -108,7 +108,7 @@
       "time": "13:30",
       "done": false,
       "order": 33,
-      "recurring": true
+      "recurring": false
     },
     {
       "id": "fe4185a4-fd3f-4b97-9292-245e46b6c385",
