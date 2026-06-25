@@ -106,7 +106,7 @@
       "day": "Jueves",
       "priority": "Alta",
       "time": "13:30",
-      "done": false,
+      "done": true,
       "order": 33,
       "recurring": false
     },
