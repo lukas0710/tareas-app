@@ -252,6 +252,17 @@
       "done": false,
       "recurring": true,
       "order": 55
+    },
+    {
+      "id": "b6e272e1-8001-44f4-afa7-efbd38f24358",
+      "title": "4 acciones de presencia y orden",
+      "desc": "",
+      "day": "Viernes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 56
     }
   ],
   "last_reset": "(2026, 26)"
