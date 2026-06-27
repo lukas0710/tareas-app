@@ -150,7 +150,7 @@
       "day": "Viernes",
       "priority": "Alta",
       "time": "12:15",
-      "done": false,
+      "done": true,
       "order": 38,
       "recurring": true
     },
