@@ -296,6 +296,17 @@
       "done": false,
       "recurring": true,
       "order": 59
+    },
+    {
+      "id": "334341ce-1603-4499-82e2-91ac5bd43fb7",
+      "title": "3 acciones empaticas",
+      "desc": "",
+      "day": "Sábado",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 60
     }
   ],
   "last_reset": "(2026, 26)"
