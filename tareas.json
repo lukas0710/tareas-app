@@ -307,6 +307,17 @@
       "done": false,
       "recurring": true,
       "order": 60
+    },
+    {
+      "id": "0151c023-51a8-48c0-83cf-b770de59c7ee",
+      "title": "facegym ,corrector,cadera y hombros",
+      "desc": "",
+      "day": "Sábado",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 61
     }
   ],
   "last_reset": "(2026, 26)"
