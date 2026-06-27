@@ -318,6 +318,17 @@
       "done": false,
       "recurring": true,
       "order": 61
+    },
+    {
+      "id": "0d41bf6f-ca9c-4654-bf2f-0fe7206304ed",
+      "title": "voz y trabalenguas",
+      "desc": "",
+      "day": "Sábado",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 62
     }
   ],
   "last_reset": "(2026, 26)"
