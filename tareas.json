@@ -329,6 +329,17 @@
       "done": false,
       "recurring": true,
       "order": 62
+    },
+    {
+      "id": "e3152054-9b04-49c2-9a83-91e3c8cbe100",
+      "title": "meditacion y lectura",
+      "desc": "",
+      "day": "Sábado",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 63
     }
   ],
   "last_reset": "(2026, 26)"
