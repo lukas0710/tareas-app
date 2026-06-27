@@ -274,6 +274,17 @@
       "done": false,
       "recurring": true,
       "order": 57
+    },
+    {
+      "id": "36ee7d91-621e-4eb7-8ae6-be5558679e98",
+      "title": "hacer proyecto trafico y ventas en claude",
+      "desc": "",
+      "day": "Sábado",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 58
     }
   ],
   "last_reset": "(2026, 26)"
