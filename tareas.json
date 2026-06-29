@@ -106,7 +106,7 @@
       "day": "Jueves",
       "priority": "Alta",
       "time": "11:15",
-      "done": true,
+      "done": false,
       "order": 34,
       "recurring": true
     },
@@ -139,7 +139,7 @@
       "day": "Viernes",
       "priority": "Alta",
       "time": "11:30",
-      "done": true,
+      "done": false,
       "order": 37,
       "recurring": true
     },
@@ -150,7 +150,7 @@
       "day": "Viernes",
       "priority": "Alta",
       "time": "12:15",
-      "done": true,
+      "done": false,
       "order": 38,
       "recurring": true
     },
@@ -161,7 +161,7 @@
       "day": "Viernes",
       "priority": "Alta",
       "time": "14:00",
-      "done": true,
+      "done": false,
       "order": 39,
       "recurring": true
     },
@@ -216,7 +216,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 52
     },
@@ -227,7 +227,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 53
     },
@@ -238,7 +238,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 54
     },
@@ -271,7 +271,7 @@
       "day": "Sábado",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 57
     },
@@ -315,7 +315,7 @@
       "day": "Sábado",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 61
     },
@@ -326,7 +326,7 @@
       "day": "Sábado",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 62
     },
@@ -342,5 +342,5 @@
       "order": 63
     }
   ],
-  "last_reset": "(2026, 26)"
+  "last_reset": "(2026, 27)"
 }
