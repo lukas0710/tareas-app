@@ -139,7 +139,7 @@
       "day": "Viernes",
       "priority": "Alta",
       "time": "11:30",
-      "done": false,
+      "done": true,
       "order": 37,
       "recurring": true
     },
