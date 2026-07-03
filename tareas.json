@@ -161,7 +161,7 @@
       "day": "Viernes",
       "priority": "Alta",
       "time": "14:00",
-      "done": false,
+      "done": true,
       "order": 39,
       "recurring": true
     },
