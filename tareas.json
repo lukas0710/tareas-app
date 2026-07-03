@@ -340,6 +340,17 @@
       "done": false,
       "recurring": true,
       "order": 63
+    },
+    {
+      "id": "4e1bab47-14ae-4903-9f1a-9672d579330b",
+      "title": "Leer y trabalenguas",
+      "desc": "",
+      "day": "Viernes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 64
     }
   ],
   "last_reset": "(2026, 27)"
