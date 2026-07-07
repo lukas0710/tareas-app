@@ -373,6 +373,17 @@
       "done": false,
       "recurring": true,
       "order": 66
+    },
+    {
+      "id": "d672e112-e5f5-4e46-a56b-70a3e313c306",
+      "title": "5 acciones limpieza y orden",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 67
     }
   ],
   "last_reset": "(2026, 28)"
