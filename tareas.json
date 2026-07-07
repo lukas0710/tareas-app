@@ -362,6 +362,17 @@
       "done": false,
       "recurring": true,
       "order": 65
+    },
+    {
+      "id": "02c90d21-ca49-426d-b728-12fc2de37f29",
+      "title": "Publicar 5 productos",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 66
     }
   ],
   "last_reset": "(2026, 28)"
