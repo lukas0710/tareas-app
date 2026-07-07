@@ -406,6 +406,17 @@
       "done": false,
       "recurring": true,
       "order": 69
+    },
+    {
+      "id": "76b26529-f50f-4263-874b-85d91cb12641",
+      "title": "Meditar",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 70
     }
   ],
   "last_reset": "(2026, 28)"
