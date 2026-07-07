@@ -351,6 +351,17 @@
       "done": false,
       "recurring": true,
       "order": 64
+    },
+    {
+      "id": "158dce8f-22e6-4e76-bffe-746cbd705f85",
+      "title": "publicar 5 libros",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 65
     }
   ],
   "last_reset": "(2026, 28)"
