@@ -73,7 +73,7 @@
       "day": "Miércoles",
       "priority": "Alta",
       "time": "07:00",
-      "done": false,
+      "done": true,
       "order": 19,
       "recurring": true
     },
