@@ -205,7 +205,7 @@
       "day": "Miércoles",
       "priority": "Media",
       "time": "08:00",
-      "done": false,
+      "done": true,
       "recurring": false,
       "order": 51
     },
