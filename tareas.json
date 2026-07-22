@@ -428,6 +428,17 @@
       "done": false,
       "recurring": true,
       "order": 71
+    },
+    {
+      "id": "f82cdd9b-2f9a-4cc1-b2bf-2565b0d3fcf1",
+      "title": "3 acciones empaticas y de limpieza -organizacion",
+      "desc": "",
+      "day": "Miércoles",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 72
     }
   ],
   "last_reset": "(2026, 30)"
