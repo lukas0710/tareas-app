@@ -417,6 +417,17 @@
       "done": false,
       "recurring": true,
       "order": 70
+    },
+    {
+      "id": "03a328e2-6d2e-4013-a38a-c89b71ccc879",
+      "title": "publicar productos nuevos y ver si puedo hacer reels",
+      "desc": "",
+      "day": "Miércoles",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 71
     }
   ],
   "last_reset": "(2026, 30)"
