@@ -254,17 +254,6 @@
       "order": 55
     },
     {
-      "id": "b6e272e1-8001-44f4-afa7-efbd38f24358",
-      "title": "3 acciones empaticas",
-      "desc": "",
-      "day": "Viernes",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 56
-    },
-    {
       "id": "5f0da1cd-ccf0-4eed-a632-e88a6d4f461e",
       "title": "publicar 5 productos",
       "desc": "",
