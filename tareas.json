@@ -439,6 +439,17 @@
       "done": false,
       "recurring": true,
       "order": 73
+    },
+    {
+      "id": "e1ff76e7-4b0a-40ea-92c6-bb33c87e9bc1",
+      "title": "acciones empaticas y limpieza",
+      "desc": "",
+      "day": "Viernes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 74
     }
   ],
   "last_reset": "(2026, 30)"
