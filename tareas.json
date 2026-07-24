@@ -428,6 +428,17 @@
       "done": false,
       "recurring": true,
       "order": 72
+    },
+    {
+      "id": "816f35ef-285c-43ca-bd11-c28d5e7c0496",
+      "title": "chsites y piropos",
+      "desc": "",
+      "day": "Viernes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 73
     }
   ],
   "last_reset": "(2026, 30)"
