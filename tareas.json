@@ -254,17 +254,6 @@
       "order": 55
     },
     {
-      "id": "5f0da1cd-ccf0-4eed-a632-e88a6d4f461e",
-      "title": "publicar 5 productos",
-      "desc": "",
-      "day": "Sábado",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 57
-    },
-    {
       "id": "36ee7d91-621e-4eb7-8ae6-be5558679e98",
       "title": "hacer proyecto trafico y ventas en claude",
       "desc": "",
