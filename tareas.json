@@ -331,17 +331,6 @@
       "order": 67
     },
     {
-      "id": "ec4611f4-32b1-4b10-a893-91350eeced60",
-      "title": "2 acciones empatia",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 68
-    },
-    {
       "id": "9d78a18d-70c7-4988-b1c0-9c5cb3ef6911",
       "title": "Leer y trabalenguas",
       "desc": "",
