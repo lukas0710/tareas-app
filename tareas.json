@@ -406,6 +406,17 @@
       "done": false,
       "recurring": true,
       "order": 76
+    },
+    {
+      "id": "d889fb55-e77d-40ae-9e18-4771a5033c8e",
+      "title": "Libros",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 77
     }
   ],
   "last_reset": "(2026, 33)"
