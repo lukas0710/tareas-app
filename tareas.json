@@ -417,6 +417,17 @@
       "done": false,
       "recurring": true,
       "order": 77
+    },
+    {
+      "id": "8d2c28df-208b-47e3-ace4-4c5c153bf741",
+      "title": "Falabella",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 78
     }
   ],
   "last_reset": "(2026, 33)"
