@@ -337,7 +337,7 @@
       "day": "Martes",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 70
     },
@@ -441,5 +441,5 @@
       "order": 79
     }
   ],
-  "last_reset": "(2026, 33)"
+  "last_reset": "(2026, 36)"
 }
