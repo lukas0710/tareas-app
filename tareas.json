@@ -373,17 +373,6 @@
       "done": false,
       "recurring": true,
       "order": 75
-    },
-    {
-      "id": "ed854402-105a-4ba3-916e-fa5a841700cb",
-      "title": "Camara de comercio",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 79
     }
   ],
   "last_reset": "(2026, 36)"
