@@ -309,17 +309,6 @@
       "order": 66
     },
     {
-      "id": "d672e112-e5f5-4e46-a56b-70a3e313c306",
-      "title": "3 acciones limpieza y orden",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 67
-    },
-    {
       "id": "9d78a18d-70c7-4988-b1c0-9c5cb3ef6911",
       "title": "Leer y trabalenguas",
       "desc": "",
