@@ -320,17 +320,6 @@
       "order": 69
     },
     {
-      "id": "76b26529-f50f-4263-874b-85d91cb12641",
-      "title": "Meditar",
-      "desc": "",
-      "day": "Martes",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 70
-    },
-    {
       "id": "03a328e2-6d2e-4013-a38a-c89b71ccc879",
       "title": "publicar productos nuevos y ver si puedo hacer reels",
       "desc": "",
