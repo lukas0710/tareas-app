@@ -373,6 +373,17 @@
       "done": false,
       "recurring": true,
       "order": 75
+    },
+    {
+      "id": "cf24e83a-13e2-4dc9-95e0-df6215c91842",
+      "title": "Practica conversación (escucha activa,imaginacion ,preguntas pasado)",
+      "desc": "",
+      "day": "Martes",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 76
     }
   ],
   "last_reset": "(2026, 36)"
