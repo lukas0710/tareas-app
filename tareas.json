@@ -320,17 +320,6 @@
       "order": 69
     },
     {
-      "id": "f82cdd9b-2f9a-4cc1-b2bf-2565b0d3fcf1",
-      "title": "3 acciones empaticas y de limpieza -organizacion",
-      "desc": "",
-      "day": "Miércoles",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 72
-    },
-    {
       "id": "816f35ef-285c-43ca-bd11-c28d5e7c0496",
       "title": "chsites y piropos",
       "desc": "",
