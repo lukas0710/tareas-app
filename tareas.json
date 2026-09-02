@@ -373,6 +373,17 @@
       "done": false,
       "recurring": true,
       "order": 77
+    },
+    {
+      "id": "de3d740a-2ce0-4c72-b8cd-4851a3e74e4e",
+      "title": "Audio inteligente 40 minutos",
+      "desc": "",
+      "day": "Miércoles",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 78
     }
   ],
   "last_reset": "(2026, 36)"
