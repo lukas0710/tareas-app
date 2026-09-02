@@ -362,6 +362,17 @@
       "done": true,
       "recurring": true,
       "order": 76
+    },
+    {
+      "id": "0708cc7c-a2fb-46f4-8b32-9fa5f79fb529",
+      "title": "Practica conversacional.",
+      "desc": "",
+      "day": "Miércoles",
+      "priority": "Media",
+      "time": "08:00",
+      "done": false,
+      "recurring": true,
+      "order": 77
     }
   ],
   "last_reset": "(2026, 36)"
