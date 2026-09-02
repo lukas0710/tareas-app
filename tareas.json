@@ -95,7 +95,7 @@
       "day": "Miércoles",
       "priority": "Alta",
       "time": "14:30",
-      "done": false,
+      "done": true,
       "order": 32,
       "recurring": true
     },
