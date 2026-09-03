@@ -211,11 +211,11 @@
     },
     {
       "id": "5070fec7-853e-4214-be24-9b04fd240fea",
-      "title": "MEDITAR Y SUPLEMENTOS",
+      "title": "LEER ,TRABALENGUAS",
       "desc": "",
       "day": "Jueves",
       "priority": "Media",
-      "time": "08:00",
+      "time": "14:00",
       "done": false,
       "recurring": true,
       "order": 53
