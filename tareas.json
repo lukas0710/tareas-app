@@ -362,6 +362,17 @@
       "done": false,
       "recurring": true,
       "order": 79
+    },
+    {
+      "id": "7043fd7e-078f-4726-9297-e4cbbeea3274",
+      "title": "PRACTICA CONVESACION",
+      "desc": "",
+      "day": "Jueves",
+      "priority": "Media",
+      "time": "15:07",
+      "done": false,
+      "recurring": true,
+      "order": 80
     }
   ],
   "last_reset": "(2026, 36)"
