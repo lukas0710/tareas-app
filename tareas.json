@@ -362,6 +362,17 @@
       "done": false,
       "recurring": true,
       "order": 78
+    },
+    {
+      "id": "c692fdb6-faed-4143-be1a-e40d1357873a",
+      "title": "AUDIO INTELIGENTE",
+      "desc": "",
+      "day": "Jueves",
+      "priority": "Media",
+      "time": "21:01",
+      "done": false,
+      "recurring": true,
+      "order": 79
     }
   ],
   "last_reset": "(2026, 36)"
