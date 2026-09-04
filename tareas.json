@@ -133,17 +133,6 @@
       "recurring": true
     },
     {
-      "id": "171ceb79-5114-4751-9613-d033563dfe11",
-      "title": "PUblicar  productos  nuevos facebook Madre",
-      "desc": "",
-      "day": "Viernes",
-      "priority": "Alta",
-      "time": "12:15",
-      "done": false,
-      "order": 38,
-      "recurring": true
-    },
-    {
       "id": "07d27023-67c0-4aa7-8bf0-a2e33c9cfc0d",
       "title": "Meditar,mantras y respirar",
       "desc": "",
