@@ -111,17 +111,6 @@
       "recurring": true
     },
     {
-      "id": "ed403a6f-b05a-496e-afd9-bad1d7410106",
-      "title": "Publicar   libros y reels",
-      "desc": "",
-      "day": "Viernes",
-      "priority": "Alta",
-      "time": "16:00",
-      "done": false,
-      "order": 35,
-      "recurring": true
-    },
-    {
       "id": "e1d9f14a-c057-40cb-b6ec-04cba229c0da",
       "title": "facegym ,corrector,hombors y cadera",
       "desc": "",
