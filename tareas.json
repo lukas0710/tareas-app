@@ -318,6 +318,17 @@
       "done": true,
       "recurring": true,
       "order": 80
+    },
+    {
+      "id": "eedb400d-ab92-4279-a95d-230cd57208cf",
+      "title": "PRACTICA CONVERSACIONAL",
+      "desc": "",
+      "day": "Viernes",
+      "priority": "Media",
+      "time": "16:08",
+      "done": false,
+      "recurring": true,
+      "order": 81
     }
   ],
   "last_reset": "(2026, 36)"
