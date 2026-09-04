@@ -287,17 +287,6 @@
       "order": 69
     },
     {
-      "id": "e1ff76e7-4b0a-40ea-92c6-bb33c87e9bc1",
-      "title": "acciones empaticas y limpieza",
-      "desc": "",
-      "day": "Viernes",
-      "priority": "Media",
-      "time": "08:00",
-      "done": false,
-      "recurring": true,
-      "order": 74
-    },
-    {
       "id": "e479f2fd-601b-4177-a0da-02d1c920a1c1",
       "title": "Chistes, piropos,conversacion y nuevo negocio.",
       "desc": "",
