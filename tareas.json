@@ -133,17 +133,6 @@
       "recurring": true
     },
     {
-      "id": "07d27023-67c0-4aa7-8bf0-a2e33c9cfc0d",
-      "title": "Meditar,mantras y respirar",
-      "desc": "",
-      "day": "Viernes",
-      "priority": "Alta",
-      "time": "14:00",
-      "done": false,
-      "order": 39,
-      "recurring": true
-    },
-    {
       "id": "67ea526e-fa19-4211-b5ec-d0fa6ce81346",
       "title": "FACEGY Y CORRECTOR",
       "desc": "",
