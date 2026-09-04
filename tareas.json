@@ -370,7 +370,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "15:07",
-      "done": false,
+      "done": true,
       "recurring": true,
       "order": 80
     }
