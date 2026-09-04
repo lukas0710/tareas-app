@@ -329,6 +329,17 @@
       "done": false,
       "recurring": true,
       "order": 81
+    },
+    {
+      "id": "c8d6a628-8da2-4809-93fd-2dff6b627a95",
+      "title": "LEER Y VOZ",
+      "desc": "",
+      "day": "Viernes",
+      "priority": "Media",
+      "time": "17:04",
+      "done": false,
+      "recurring": true,
+      "order": 82
     }
   ],
   "last_reset": "(2026, 36)"
