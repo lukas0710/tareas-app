@@ -62,7 +62,7 @@
       "day": "Martes",
       "priority": "Media",
       "time": "18:01",
-      "done": true,
+      "done": false,
       "order": 15,
       "recurring": true
     },
@@ -73,7 +73,7 @@
       "day": "Miércoles",
       "priority": "Alta",
       "time": "07:00",
-      "done": true,
+      "done": false,
       "order": 19,
       "recurring": true
     },
@@ -95,7 +95,7 @@
       "day": "Miércoles",
       "priority": "Alta",
       "time": "14:30",
-      "done": true,
+      "done": false,
       "order": 32,
       "recurring": true
     },
@@ -128,7 +128,7 @@
       "day": "Miércoles",
       "priority": "Alta",
       "time": "18:03",
-      "done": true,
+      "done": false,
       "order": 48,
       "recurring": true
     },
@@ -161,7 +161,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 52
     },
@@ -172,7 +172,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "14:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 53
     },
@@ -227,7 +227,7 @@
       "day": "Viernes",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 64
     },
@@ -238,7 +238,7 @@
       "day": "Martes",
       "priority": "Media",
       "time": "08:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 66
     },
@@ -249,7 +249,7 @@
       "day": "Martes",
       "priority": "Media",
       "time": "14:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 69
     },
@@ -271,7 +271,7 @@
       "day": "Martes",
       "priority": "Media",
       "time": "15:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 76
     },
@@ -282,7 +282,7 @@
       "day": "Miércoles",
       "priority": "Media",
       "time": "16:00",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 77
     },
@@ -315,7 +315,7 @@
       "day": "Jueves",
       "priority": "Media",
       "time": "15:07",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 80
     },
@@ -326,7 +326,7 @@
       "day": "Viernes",
       "priority": "Media",
       "time": "16:08",
-      "done": true,
+      "done": false,
       "recurring": true,
       "order": 81
     },
@@ -342,5 +342,5 @@
       "order": 82
     }
   ],
-  "last_reset": "(2026, 36)"
+  "last_reset": "(2026, 37)"
 }
