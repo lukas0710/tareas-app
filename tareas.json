@@ -329,6 +329,17 @@
       "done": false,
       "recurring": true,
       "order": 82
+    },
+    {
+      "id": "8029f144-a776-4792-ad05-45cc14047d07",
+      "title": "PRACTICA CONVERSACIONAL",
+      "desc": "",
+      "day": "Lunes",
+      "priority": "Media",
+      "time": "18:45",
+      "done": false,
+      "recurring": true,
+      "order": 83
     }
   ],
   "last_reset": "(2026, 37)"
