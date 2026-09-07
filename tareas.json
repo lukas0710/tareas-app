@@ -340,6 +340,17 @@
       "done": false,
       "recurring": true,
       "order": 83
+    },
+    {
+      "id": "88e20eeb-ffc2-4845-8cb2-40884fd3c68e",
+      "title": "AUDIO INTELIGENTE",
+      "desc": "",
+      "day": "Lunes",
+      "priority": "Media",
+      "time": "20:21",
+      "done": false,
+      "recurring": true,
+      "order": 84
     }
   ],
   "last_reset": "(2026, 37)"
