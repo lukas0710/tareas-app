@@ -337,7 +337,7 @@
       "day": "Lunes",
       "priority": "Media",
       "time": "18:45",
-      "done": false,
+      "done": true,
       "recurring": true,
       "order": 83
     },
